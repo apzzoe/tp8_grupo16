@@ -7,9 +7,9 @@ public class Empresa {
 	private int id;
 	private String nombre;//nomre de la empresa
 	private String rubro;// a que se dedica la empresa
-	private boolean estado;//Activo, Inactivo
-	private int cantidadEmpleados; //Nro de empleados de la empresa
-	private int nroSedes; // cantidad de sedes
+	private Boolean estado;//Activo, Inactivo
+	private Integer cantidadEmpleados; //Nro de empleados de la empresa
+	private Integer nroSedes; // cantidad de sedes
 	private String telefono; //numero de contacto
 	private String direccion; // ubicacion de la empresa
 	
@@ -18,7 +18,7 @@ public class Empresa {
 		
 	}
 	
-	public Empresa(int id, String nombre, String rubro, boolean estado, int cantidadEmpleados, int nroSedes, String telefono, String direccion) {
+	public Empresa(int id, String nombre, String rubro, Boolean estado, Integer cantidadEmpleados, Integer nroSedes, String telefono, String direccion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -59,29 +59,29 @@ public class Empresa {
 	}
 	
 	//ESTADO
-	public boolean getEstado() {
+	public Boolean getEstado() {
 		return estado;
 	}
 
-	public void setEstado(boolean estado) {
+	public void setEstado(Boolean estado) {
 		this.estado = estado;
 	}
 	
 	//CANT EMPLEADOS
-	public int getCantidadEmpleados() {
+	public Integer getCantidadEmpleados() {
 		return cantidadEmpleados;
 	}
 
-	public void setCantidadEmpleados(int cantidadEmpleados) {
+	public void setCantidadEmpleados(Integer cantidadEmpleados) {
 		this.cantidadEmpleados = cantidadEmpleados;
 	}
 
 	//NRO DE SEDES
-	public int getNroSedes() {
+	public Integer getNroSedes() {
 		return nroSedes;
 	}
 
-	public void setNroSedes(int nroSedes) {
+	public void setNroSedes(Integer nroSedes) {
 		this.nroSedes = nroSedes;
 	}
 
