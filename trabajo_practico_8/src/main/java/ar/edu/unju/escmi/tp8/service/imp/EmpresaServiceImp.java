@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.escmi.tp8.collections.CollectionEmpresa;
+import ar.edu.unju.escmi.tp8.collections.CollectionTicket;
 import ar.edu.unju.escmi.tp8.model.Empresa;
-
+import ar.edu.unju.escmi.tp8.model.Ticket;
 import ar.edu.unju.escmi.tp8.service.IEmpresaService;
 
 @Service
@@ -59,20 +60,34 @@ public class EmpresaServiceImp implements IEmpresaService {
 
 	@Override
 	public void modificarParcialmenteEmpresa(Empresa empresa) {
-		// TODO Auto-generated method stub
+		for(Empresa emp : CollectionEmpresa.empresas) {
+			if(emp.getId() == empresa.getId()) {
+				if(empresa.getNombre()!=null)emp.setNombre(empresa.getNombre());
+				if(empresa.getRubro()!=null)emp.setRubro(empresa.getRubro());
+				if(empresa.getEstado()!=false)emp.setEstado(empresa.getEstado());
+				if(empresa.getCantidadEmpleados()>=0)emp.setCantidadEmpleados(empresa.getCantidadEmpleados());
+				if(empresa.getNroSedes()!=0)emp.setNroSedes(empresa.getNroSedes());
+				if(empresa.getTelefono()!=null)emp.setTelefono(empresa.getTelefono());
+				if(empresa.getDireccion()!=null)emp.setDireccion(empresa.getDireccion());
+				System.out.println("Se modificó parcialmente la empresa: "+emp);
+				
+			}
+		}
 		
 	}
 
 	@Override
 	public Empresa buscarEmpresaId(int id) {
-		// TODO Auto-generated method stub
+		Optional<Empresa> emp = CollectionEmpresa.empresas.stream().filter(e -> e.getId()== id).findFirst();
+		if(emp.isPresent()) {
+			return emp.get();
+		}
 		return null;
 	}
 
 	@Override
 	public Empresa getEmpresa() {
-		// TODO Auto-generated method stub
-		return null;
+		return empresa;
 	}
 	
 	
